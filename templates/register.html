@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+
+<html>
+  
+	<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" /> <!tells what language is supported>
+		<title>Annonymous Support for Students</title>
+    <link rel="stylesheet" href="/static/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Lobster&family=Merienda+One&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+	</head>
+
+  <body>
+    <div class="main">
+      <p>
+        <form method="POST">
+        <p>
+          Please enter an username and a strong password:<br>
+          Username:<br><input name="username" type="text" autofocus><br>
+          Password:<br><input name="password" type="password"><br>
+          Confirm Password:<br><input name="confirm-password" type="password"><br>
+          <input type="submit">
+        </p>
+        </form>
+      </p>
+      <p style="color:red;">{{error}}</p>
+      <p style="color:green;">{{success}}</p>
+    </div>
+    <div class="sidenav">
+      <p>
+        <a href="/login">Login</a>
+      </p>
+    </div>
+  </body>
+
+</html>
