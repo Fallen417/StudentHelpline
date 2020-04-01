@@ -1,11 +1,9 @@
 from flask import Flask, render_template, request, session
 from threading import Thread
 import shelve
-import os
 from random import randint
 from datetime import datetime
 
-key=os.getenv("key")
 app = Flask('')
 app.secret_key=bytes(randint(1,10000))
 
