@@ -3,51 +3,63 @@
 <html>
   
 	<head>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8" /> <!tells what language is supported>
 		<title>Help for Students</title>
     <link rel="stylesheet" href="/static/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Lobster&family=Merienda+One&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+
 	</head>
 
 	<body>
+
     <div class="main">
+
       <h1>
         Welcome ADMIN!
       </h1>
+
       <h2>
         Account Editor<br>
       </h2>
+
       <h3>
         Accounts: <a href="/admin">Show</a><br>
         {% for username in accounts %}
           {{username}}<br>
-        {% endfor %}
+        {% endfor %}<br>
       </h3>
-      <br><form method="POST">
-        <p>
-          Change Password for User:
-          Username:<br><input type="text" name="username" autofocus><br>
-          Password:<br><input type="password" name="password"><br>
-          Confirm Password:<br><input name="confirm-password" type="password"><br>
-          <input type="submit" value="Change password">
-          <br><br>
-        </p>
-        <p>
-          Delete User Account:<br>
-          Username:<br><input name="delete"><br>
-        <input type="submit" value="Delete Account">
-        </p>
-      </form><br>
+
+      <form method="POST">
+      <p>
+        Change Password for User:<br>
+        Username:<br><input type="text" name="username" autofocus><br>
+        Password:<br><input type="password" name="password"><br>
+        Confirm Password:<br><input name="confirm-password" type="password"><br>
+        <input type="submit" value="Change password">
+        <br><br>
+      </p>
+
+      <p>
+        Delete User Account:<br>
+        Username:<br><input name="delete"><br>
+      <input type="submit" value="Delete Account"><br>
+      </p>
+      </form>
+
       <p style="color:red;">{{error}}</p>
       <p style="color:green;">{{success}}</p>
+
     </div>
+
     <div class="sidenav">
+
       <p>
         <a href="/admin-questions">Questions</a>
-        <a href="/deleteall">Clear History</a>
         <a href="/admin-logout">Logout</a>
       </p>
+
     </div>
 
 	</body>
