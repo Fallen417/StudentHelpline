@@ -138,6 +138,7 @@ def admin_actual():
     dater = date.strftime("%A%B")
     datecode = ''.join(str(ord(c)) for c in dater)
     if password==datecode:  #https://www.browserling.com/tools/text-to-ascii
+    #871011001101011151009712165112114105108
       session["admin"]="yep"
       return render_template("admin.html")
     else:
