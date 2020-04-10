@@ -1,44 +1,31 @@
 <!DOCTYPE HTML>
-
 <html>
-  
 	<head>
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8" /> <!tells what language is supported>
 		<title>Help for Students</title>
     <link rel="stylesheet" href="/static/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Lobster&family=Merienda+One&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
-
 	</head>
-
 	<body>
-
     <div class="main">
-
       <h1>Welcome {{ session["username" ]}}!</h1>
-
       <h2>Upload your questions!</h2>
-
       <h2>Please give the admins a few hours to get back to you!</h2>
-      
       <form action="/ask" method = "POST">
-      <p>
-        Problem: <input type="text" placeholder="What's your problem?" name="prob" required>
-        <input type="submit" value="Post"/><br><br>
-      </p>
+        <p>
+          Problem: <input type="text" placeholder="What's your problem?" name="prob" required>
+          <input type="submit" value="Post"/>
+          <br>
+          <br>
+        </p>
       </form>
-
     </div>
-
     <div class="sidenav">
-
       <p>
         <a href="/reply">Replies</a>
         <a href="/settings">Settings</a>
       </p>
-
     </div>
-
 	</body>
 </html>
