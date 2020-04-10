@@ -1,43 +1,33 @@
 <!DOCTYPE HTML>
-
 <html>
-  
 	<head>
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8" /> <!tells what language is supported>
 		<title>Help for Students</title>
     <link rel="stylesheet" href="/static/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Lobster&family=Merienda+One&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
-
 	</head>
-
 	<body>
-
     <div class="main">
-
       <form method="POST">
-      <p>
-        Current Password:<br><input name="current" type="password" required><br>
-        New Password:<br><input name="new" type="password" required><br>
-        Confirm New Password:<br><input name="confirm-new" type="password" required><br>
-        <input type="submit">
-      </p>
+        <p>
+          Current Password:<br><input name="current" type="password" required>
+          <br>
+          New Password:<br><input name="new" type="password" required>
+          <br>
+          Confirm New Password:<br><input name="confirm-new" type="password" required>
+          <br>
+          <input type="submit">
+        </p>
       </form>
-
+      <! maybe use html alerts instead? user need not scroll down to check for the status of their request for e.g. on phone>
       <p style="color:red;">{{error}}</p>
       <p style="color:green;">{{success}}</p>
-
     </div>
-
     <div class="sidenav">
-
       <p>
         <a href="/settings">Back</a>
       </p>
-
     </div>
-
 	</body>
-
 </html>
