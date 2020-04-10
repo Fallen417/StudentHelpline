@@ -142,8 +142,25 @@ def admin_actual():
     dater = date.strftime("%A%B")
     datecode = ''.join(str(ord(c)) for c in dater)
     if password==datecode:  #https://www.browserling.com/tools/text-to-ascii
-    #871011001101011151009712165112114105108
-    #841041171141151009712165112114105108
+    #Monday: 7711111010097121
+    #Tuesday: 8411710111510097121
+    #Wednesday: 8710110011010111510097121
+    #Thursday: 8410411711411510097121
+    #Friday: 7011410510097121
+    #Saturday: 839711611711410097121
+    #Sunday: 8311711010097121
+    #January: 749711011797114121
+    #Februrary: 701019811411797114121
+    #March: 779711499104
+    #April: 65112114105108
+    #May: 7797121
+    #June: 74117110101
+    #July: 74117108121
+    #August: 65117103117115116
+    #September: 8310111211610110998101114
+    #October: 799911611198101114
+    #November: 7811111810110998101114
+    #December: 681019910110998101114
       session["admin"]="yep"
       return render_template("ADMIN/admin.html")
     else:
