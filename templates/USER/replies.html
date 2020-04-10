@@ -1,47 +1,34 @@
 <!DOCTYPE HTML>
-
 <html>
-  
 	<head>
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8" /> <!tells what language is supported>
 		<title>Help for Students</title>
     <link rel="stylesheet" href="/static/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Lobster&family=Merienda+One&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
-
 	</head>
-
 	<body>
-
     <div class="main">
-
       <h1>Welcome {{ session["username"] }}!</h1>
-
       <h2>View questions and replies here!</h2>
-
       <p>
         {% for i in range (problem|length) %}
-        Question {{ (i+1) }}: {{ problem[i] }}<br>
+        Question {{ (i+1) }}: {{ problem[i] }}
+        <br>
         Reply: {% if replies[i] != "no reply"%}
-                {{ replies[i] }}<br>
+                {{ replies[i] }}
+        <br>
               {%else%}
                   Unanswered?? 
               {%endif%}
         {%endfor%}
       </p>
-
     </div>
-
     <div class="sidenav">
-
       <p>
         <a href="/ask">Questions</a>
         <a href="/settings">Settings</a>
       </p>
-
     </div>
-
 	</body>
-  
 </html>
