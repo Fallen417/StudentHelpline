@@ -1,36 +1,25 @@
 <!DOCTYPE HTML>
-
 <html>
-  
 	<head>
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8" /> <!tells what language is supported>
 		<title>Help for Students</title>
     <link rel="stylesheet" href="/static/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Lobster&family=Merienda+One&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
-
 	</head>
-
-	<body>
-
+  <body>
     <div class="main">
-
       <p>
-        Please enter the admin password:<br>
+        Please enter the admin password:
+        <br>
       </p>
-
       <form method="POST">
-      <p>
-        <input name="password" type="password" autofocus required>
-        <input type="submit">
-      </p>
+        <p>
+          <input name="password" type="password" autofocus required>
+          <input type="submit">
+        </p>
       </form>
-
       <p style="color:red;">{{error}}</p>
-    
     </div>
-    
 	</body>
-
 </html>
