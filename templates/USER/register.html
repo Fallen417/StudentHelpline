@@ -1,45 +1,63 @@
 <!DOCTYPE HTML>
-
 <html>
-  
-	<head>
-
+  <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8" /> <!tells what language is supported>
 		<title>Help for Students</title>
     <link rel="stylesheet" href="/static/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Lobster&family=Merienda+One&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
-
-	</head>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.2.0/zxcvbn.js"></script>
+  </head>
   <body>
-
     <div class="main">
-      
       <form method="POST">
-      <p>
-        Please enter an username and a strong password:<br>
-        Username:<br><input name="username" type="text" autofocus required><br>
-        Password:<br><input name="password" type="password" required><br>
-        Confirm Password:<br><input name="confirm-password" type="password" required><br>
-        <input type="submit">
-      </p>
+        <p>
+          Please enter an Username and a Password<br>
+          Username:<br><input name="username" type="text" autofocus required>
+          <! I added a simple password strength meter so users can see if their password is strong or not, just some easier usage I guess>
+          <br>
+          <label for="password">Password:</label>
+          <br>
+          <input name="password"type="password" id="password" required>
+          <br>
+          <meter max="4" id="password-strength"></meter>
+        </p>
+        <p id="password-strength-text"></p>
+          <script type="text/javascript">
+            var strength = {
+              0: "Weak",
+              1: "Moderately Weak",
+              2: "Moderate",
+              3: "Moderately Strong",
+              4: "Strong"
+            }
+            var password = document.getElementById('password');
+            var meter = document.getElementById('password-strength');
+            var text = document.getElementById('password-strength-text');
+            password.addEventListener('input', function() {
+              var val = password.value;
+              var result = zxcvbn(val);
+              meter.value = result.score;
+              if (val !== "") {
+                text.innerHTML = "Password Strength: " + strength[result.score]; 
+              } else {
+                text.innerHTML = "";
+              }
+            });
+          </script>
+        <p>
+          Confirm Password:<br><input name="confirm-password" type="password" required>
+          <br>
+          <input type="submit">
+        </p>
       </form>
-
       <p style="color:red;">{{error}}</p>
       <p style="color:green;">{{success}}</p>
-
     </div>
-
     <div class="sidenav">
-
       <p>
         <a href="/login">Login</a>
-        <a href="/">Home</a>
       </p>
-
     </div>
-    
   </body>
-
 </html>
